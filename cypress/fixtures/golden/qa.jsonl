@@ -1,0 +1,8 @@
+{"id": "capital", "input": "What is the capital of the USA? Answer in one sentence.", "expected": "Washington, D.C. is the capital of the United States.", "mustMention": ["Washington"]}
+{"id": "planet", "input": "Which planet in our solar system is the largest?", "expected": "Jupiter is the largest planet.", "mustMention": ["Jupiter"]}
+{"id": "author", "input": "Who wrote the novel Pride and Prejudice?", "expected": "Jane Austen wrote Pride and Prejudice.", "mustMention": ["Austen"]}
+{"id": "boiling", "input": "At sea level, what is the boiling point of water in degrees Celsius?", "answer": 100}
+{"id": "change", "input": "Pens cost 3 dollars each. Maya buys 4 pens and pays with a 20 dollar bill. How much change does she get, in dollars?", "answer": 8}
+{"id": "speed", "input": "A cyclist rides 45 km in 1.5 hours. What is the average speed in km per hour?", "answer": 30}
+{"id": "grounded-currency", "input": "Using only this fact sheet, what currency does the United States use?\n\nFact sheet: Washington, D.C. is the capital of the United States. The US dollar is the national currency.", "expected": "The United States uses the US dollar.", "mustMention": ["dollar"], "groundedIn": "Washington, D.C. is the capital of the United States. The US dollar is the national currency."}
+{"id": "grounded-unknown", "input": "Using only this fact sheet, what is the population of Washington, D.C.? If the fact sheet does not say, answer exactly: I do not know.\n\nFact sheet: Washington, D.C. is the capital of the United States. The US dollar is the national currency.", "expected": "I do not know.", "mustMention": ["do not know"]}

@@ -1,0 +1,12 @@
+node_modules/
+.env
+app/generated/*
+!app/generated/.gitkeep
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+ai-vitals/
+.cache/
+ai.env
+cypress/ai-vitals/
+.env.*

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Playground</title>
+    <meta name="description" content="A small AI product with chat, image and voice features, built to show how cypress-ai-vitals tests AI quality." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161827'/%3E%3Cpath d='M5 17h6l3-8 4 15 3-7h6' fill='none' stroke='%233cc48f' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+    <a class="skip" href="#view">Skip to content</a>
+    <header class="topbar" data-cy="topbar">
+      <a class="brand" href="/" data-link data-cy="brand">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" /><path d="M5 17h6l3-8 4 15 3-7h6" /></svg>
+        <span>AI Playground</span>
+      </a>
+      <nav class="nav" aria-label="Main" data-cy="nav">
+        <a href="/chat" data-link data-cy="nav-chat">Chat</a>
+        <a href="/image" data-link data-cy="nav-image">Image</a>
+        <a href="/audio" data-link data-cy="nav-audio">Audio</a>
+        <a href="/vitals" data-link data-cy="nav-vitals">Reports</a>
+      </nav>
+      <div class="status">
+        <span class="mode" data-cy="mode-badge" hidden></span>
+        <a class="session" href="/vitals" data-link data-cy="session-chip" title="Model calls this session">
+          <span class="pulse" aria-hidden="true"></span>
+          <span data-cy="session-calls">0</span>&nbsp;calls&nbsp;·&nbsp;<span data-cy="session-cost">$0</span>
+        </a>
+        <button class="icon-button" type="button" data-cy="theme-toggle" aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="view" data-cy="view" tabindex="-1"></main>
+
+    <footer class="footer">
+      <p>Every answer, image and voice here comes from a real model. The Cypress tests next to this app check them with <code>cypress-ai-vitals</code>.</p>
+    </footer>
+
+    <div class="toasts" data-cy="toasts" aria-live="polite"></div>
+    <dialog class="lightbox" data-cy="lightbox"><img alt="" /><button type="button" class="close" aria-label="Close">×</button></dialog>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "name": "cypress-demo",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "The Multimodal Madness: Cypress Ambassador 2026 demo (AI Playground + cypress-ai-vitals)",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "app": "tsx app/server.ts",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "demo": "start-server-and-test app http://localhost:4400/health cy:open",
+    "test": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --expose grepTags=-@needs-cloud+-@real-web\"",
+    "test:sanity": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/00-sanity/*.cy.ts'\"",
+    "test:text": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/text/*.cy.ts'\"",
+    "test:image": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/image/*.cy.ts'\"",
+    "test:audio": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/audio/*.cy.ts'\"",
+    "test:techniques": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/techniques/*.cy.ts'\"",
+    "test:record": "AI_MODE=record start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --expose grepTags=-@needs-cloud+-@real-web\"",
+    "test:replay": "AI_MODE=replay start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --expose grepTags=-@needs-cloud+-@real-web\"",
+    "models": "cypress-ai-vitals models --ping",
+    "report": "cypress-ai-vitals report",
+    "open:reports": "open cypress/ai-vitals/reports/index.html",
+    "clean:reports": "cypress-ai-vitals clean",
+    "plugin:refresh": "bash scripts/plugin-refresh.sh",
+    "cy:open:cloud": "cypress open --e2e --browser chrome --expose grepTags=@needs-cloud",
+    "test:cloud": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --expose grepTags=@needs-cloud\"",
+    "test:real": "start-server-and-test app http://localhost:4400/health \"cypress run --browser chrome --spec 'cypress/e2e/real-demo/*.cy.ts' --expose grepTags=-@needs-cloud\"",
+    "cy:open:real": "cypress open --e2e --browser chrome --expose pauseForLogin=true,grepTags=-@needs-cloud"
+  },
+  "devDependencies": {
+    "@cypress/grep": "7.0.0",
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.1",
+    "cypress": "16.1.1",
+    "cypress-ai-vitals": "^0.1.0",
+    "start-server-and-test": "3.0.12",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  },
+  "dependencies": {
+    "dotenv": "18.0.5",
+    "express": "5.2.1"
+  }
+}

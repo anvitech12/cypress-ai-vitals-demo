@@ -1,0 +1,3 @@
+{"id": "capital", "input": "What is the capital of the USA? Answer in one short sentence.", "expected": "Washington, D.C. is the capital of the United States.", "mustMention": ["Washington"]}
+{"id": "math", "input": "A shop sells pens at 3 dollars each. Maya buys 4 pens and pays with a 20 dollar bill. How much change does she get? Reply with the number only.", "answer": 8}
+{"id": "boiling", "input": "At sea level, what is the boiling point of water in degrees Celsius? Reply with the number only.", "answer": 100}
