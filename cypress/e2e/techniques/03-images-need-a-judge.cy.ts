@@ -21,6 +21,6 @@ describe('Technique: images are unique every time, and CLIP cannot count', () =>
     cy.intercept('POST', '/api/image', { body: { url: '/stubs/two-cats.jpg', model: MODEL, vitals: { model: MODEL, latencyMs: 0 } } });
     generate('Three cats sitting on a sofa');
     // The picture has two cats. CLIP still matches "three cats"; the judge counts and catches it, so the test passes.
-    imageOf(MODEL).aiImageAssert({ depicts: 'three cats sitting on a sofa', judge: { rubric: 'There are exactly three cats in the image.', min: 4 }, shouldFail: true });
+    imageOf(MODEL).aiImageAssert({ depicts: 'three cats sitting on a sofa', judge: { model: 'llama-4-scout', rubric: 'There are exactly three cats in the image.', min: 4 }, shouldFail: true });
   });
 });

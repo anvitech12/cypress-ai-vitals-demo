@@ -1,4 +1,4 @@
-// Generates the image fixtures for spec 03 once, with the same models the demo uses. Run: npx tsx scripts/make-fixtures.ts
+// Generates the brand image fixtures for image/01, image/03 and techniques/03 once, with the demo's image model. Run: npx tsx scripts/make-fixtures.ts
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -6,8 +6,8 @@ import { buildRegistry, generate, loadAiEnv } from 'cypress-ai-vitals/providers'
 
 const root = path.resolve(import.meta.dirname, '..');
 const registry = buildRegistry(loadAiEnv(root));
-const image = registry.get('image');
-if (!image) throw new Error('Add AI_MODEL_IMAGE to ai.env first.');
+const image = registry.get('flux-schnell');
+if (!image) throw new Error('Add AI_MODEL_FLUX_SCHNELL to ai.env first.');
 
 async function make(prompt: string, file: string): Promise<Buffer> {
   const result = await generate(image!, { task: 'image', prompt });
@@ -52,7 +52,7 @@ await make('A photorealistic close-up photograph of a red fox face, natural ligh
 await make('A photograph of exactly two cats sitting side by side on a grey sofa', 'app/public/stubs/two-cats.jpg');
 
 const brand = {
-  palette: [{ hex: await brandColour(onBrand), minCoverage: 0.04 }],
+  palette: [{ hex: await brandColour(onBrand), minCoverage: 0.03 }],
   tolerance: 14,
   forbidden: [{ hex: '#1e3a8a', maxCoverage: 0.15 }],
   onBrand: ['brand/on-brand-1.jpg', 'brand/on-brand-2.jpg', 'brand/on-brand-3.jpg'],

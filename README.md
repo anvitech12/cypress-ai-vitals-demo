@@ -33,9 +33,9 @@ Every page lists Cloudflare Workers AI models first, then one or two free models
 
 | Provider | Used for | Free tier |
 |---|---|---|
-| Cloudflare Workers AI | chat, images, voices, transcription | 10,000 neurons a day. The demo was built on the $5 a month Workers Paid plan. |
+| Cloudflare Workers AI | chat, images, voices, transcription; Llama 4 Scout also judges the images | 10,000 neurons a day. The demo was built on the $5 a month Workers Paid plan. |
 | Groq | GPT-OSS 20B, Whisper | yes, about 30 requests a minute |
-| Google Gemini | Gemini Flash-Lite (also the judge), Gemini TTS | yes; text to speech allows 10 requests a day |
+| Google Gemini | Gemini Flash-Lite (the default judge in `ai.env`), Gemini TTS | yes; text to speech allows 10 requests a day |
 | Hugging Face (optional) | a free FLUX Space | 2 GPU-minutes a day without a token, 5 with `HF_TOKEN` |
 
 A full live run of the suite costs about $0.15 at list prices, mostly Leonardo Phoenix images. To rehearse without spending anything, record once and replay:

@@ -14,7 +14,7 @@ describe('Image: compare models side by side', () => {
       imageOf(model).aiImageAssert({
         depicts: 'a lighthouse on a cliff at dusk',
         notDepicts: ['a city skyline', 'a person', 'a car'],
-        judge: { rubric: 'A lighthouse on a cliff, dusk light, painted in a watercolor style.', min: 4 },
+        judge: { model: 'llama-4-scout', rubric: 'A lighthouse on a cliff, dusk light, painted in a watercolor style.', min: 4 },
         soft: true,
         label: 'lighthouse',
         model,

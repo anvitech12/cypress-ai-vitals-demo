@@ -6,15 +6,15 @@ const MODELS = ['flux-schnell', 'phoenix', 'sdxl-lightning'];
 const PROMPTS = [
   {
     prompt: 'A friendly orange fox mascot riding a skateboard, flat vector illustration, plain light background',
-    checks: { depicts: 'a cartoon fox riding a skateboard', brand: { fixture: 'brand/fox.json' }, judge: { rubric: 'One fox on a skateboard, flat cartoon style.', min: 4 } },
+    checks: { depicts: 'a cartoon fox riding a skateboard', brand: { fixture: 'brand/fox.json' }, judge: { model: 'llama-4-scout', rubric: 'One fox on a skateboard, flat cartoon style.', min: 4 } },
   },
   {
     prompt: 'Exactly three red apples on a wooden table, studio photo',
-    checks: { depicts: 'three red apples on a wooden table', judge: { rubric: 'There are exactly three apples, they are red, on a wooden table.', min: 4 } },
+    checks: { depicts: 'three red apples on a wooden table', judge: { model: 'llama-4-scout', rubric: 'There are exactly three apples, they are red, on a wooden table.', min: 4 } },
   },
   {
     prompt: 'A lighthouse on a rocky cliff at dusk, watercolor painting',
-    checks: { depicts: 'a lighthouse on a cliff at dusk', judge: { rubric: 'A lighthouse on a cliff at dusk, watercolor style.', min: 4 } },
+    checks: { depicts: 'a lighthouse on a cliff at dusk', judge: { model: 'llama-4-scout', rubric: 'A lighthouse on a cliff at dusk, watercolor style.', min: 4 } },
   },
 ];
 
